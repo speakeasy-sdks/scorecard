@@ -13,7 +13,7 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 typescript:
-  version: 1.0.3
+  version: 1.0.4
   author: scorecard
   maxMethodParams: 0
   packageName: '@egdeltur/scorecard'

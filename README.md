@@ -6,21 +6,21 @@
 ### NPM
 
 ```bash
-npm add scorecard
+npm add @egdeltur/scorecard
 ```
 
 ### Yarn
 
 ```bash
-yarn add scorecard
+yarn add @egdeltur/scorecard
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```typescript
-import { Scorecard } from "scorecard";
-import { TestcaseLogResponse } from "scorecard/dist/sdk/models/operations";
+import { Scorecard } from "@egdeltur/scorecard";
+import { TestcaseLogResponse } from "@egdeltur/scorecard/dist/sdk/models/operations";
 
 const sdk = new Scorecard();
 

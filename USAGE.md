@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```typescript
-import { Scorecard } from "scorecard";
-import { TestcaseLogResponse } from "scorecard/dist/sdk/models/operations";
+import { Scorecard } from "@egdeltur/scorecard";
+import { TestcaseLogResponse } from "@egdeltur/scorecard/dist/sdk/models/operations";
 
 const sdk = new Scorecard();
 
