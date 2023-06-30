@@ -13,7 +13,7 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 typescript:
-  version: 1.0.2
+  version: 1.0.3
   author: scorecard
   maxMethodParams: 0
   packageName: scorecard
