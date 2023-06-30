@@ -16,4 +16,4 @@ typescript:
   version: 1.0.3
   author: scorecard
   maxMethodParams: 0
-  packageName: scorecard
+  packageName: '@egdeltur/scorecard'
