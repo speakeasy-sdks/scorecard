@@ -1,0 +1,244 @@
+{
+    "openapi":"3.0.2",
+    "info":{
+       "title":"FastAPI",
+       "version":"0.1.0"
+    },
+    "paths":{
+       "/":{
+          "get":{
+             "summary":"Root",
+             "operationId":"get-root",
+             "x-speakeasy-name-override": "get",
+             "tags": [
+                "root"
+             ],
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                }
+             }
+          }
+       },
+       "/start-run":{
+          "post":{
+             "summary":"Start Run",
+             "tags": [
+                "Run"
+             ],
+             "operationId":"run-start",
+             "x-speakeasy-name-override": "start",
+             "requestBody":{
+                "content":{
+                   "application/json":{
+                      "schema":{
+                         "$ref":"#/components/schemas/Item"
+                      }
+                   }
+                },
+                "required":true
+             },
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                },
+                "422":{
+                   "description":"Validation Error",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            "$ref":"#/components/schemas/HTTPValidationError"
+                         }
+                      }
+                   }
+                }
+             }
+          }
+       },
+       "/log_testcase":{
+          "post":{
+             "summary":"Log Testcase",
+             "tags": [
+                "Test Case"
+            ],
+             "operationId":"testcase_log",
+            "x-speakeasy-name-override": "log",
+             "requestBody":{
+                "content":{
+                   "application/json":{
+                      "schema":{
+                         "$ref":"#/components/schemas/Testcase"
+                      }
+                   }
+                },
+                "required":true
+             },
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                },
+                "422":{
+                   "description":"Validation Error",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            "$ref":"#/components/schemas/HTTPValidationError"
+                         }
+                      }
+                   }
+                }
+             }
+          }
+       }
+    },
+    "components":{
+      "securitySchemes":{
+         "APIKeyHeader":{
+            "type":"apiKey",
+            "in":"header",
+            "name":"X-API-Key"
+         }
+      },
+       "schemas":{
+          "HTTPValidationError":{
+             "title":"HTTPValidationError",
+             "type":"object",
+             "properties":{
+                "detail":{
+                   "title":"Detail",
+                   "type":"array",
+                   "items":{
+                      "$ref":"#/components/schemas/ValidationError"
+                   }
+                }
+             }
+          },
+          "Item":{
+             "title":"Item",
+             "required":[
+                "model_version",
+                "run_id",
+                "token"
+             ],
+             "type":"object",
+             "properties":{
+                "model_version":{
+                   "title":"Model Version",
+                   "type":"string"
+                },
+                "run_id":{
+                   "title":"Run Id",
+                   "type":"string"
+                },
+                "token":{
+                   "title":"Token",
+                   "type":"string"
+                }
+             }
+          },
+          "Testcase":{
+             "title":"Testcase",
+             "required":[
+                "testset_id",
+                "user_query"
+             ],
+             "type":"object",
+             "properties":{
+                "testset_id":{
+                   "title":"Testset Id",
+                   "type":"string"
+                },
+                "user_query":{
+                   "title":"User Query",
+                   "type":"string"
+                },
+                "model_response":{
+                   "title":"Model Response",
+                   "type":"string"
+                },
+                "retrieval_context":{
+                   "title":"Retrieval Context",
+                   "type":"string"
+                },
+                "full_prompt":{
+                   "title":"Full Prompt",
+                   "type":"string"
+                },
+                "ideal":{
+                   "title":"Ideal",
+                   "type":"string"
+                }
+             }
+          },
+          "ValidationError":{
+             "title":"ValidationError",
+             "required":[
+                "loc",
+                "msg",
+                "type"
+             ],
+             "type":"object",
+             "properties":{
+                "loc":{
+                   "title":"Location",
+                   "type":"array",
+                   "items":{
+                      "anyOf":[
+                         {
+                            "type":"string"
+                         },
+                         {
+                            "type":"integer"
+                         }
+                      ]
+                   }
+                },
+                "msg":{
+                   "title":"Message",
+                   "type":"string"
+                },
+                "type":{
+                   "title":"Error Type",
+                   "type":"string"
+                }
+             }
+          }
+       }
+    },
+    "security":[
+      {
+         "APIKeyHeader":[]
+      }
+   ],
+    "servers":[
+       {
+          "url":"https://api.getscorecard.ai",
+          "description":"Production server"
+       },
+       {
+          "url":"http://localhost:8000",
+          "description":"Local development server"
+       }
+    ]
+ }
