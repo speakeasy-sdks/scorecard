@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
-export class RootGetResponse extends SpeakeasyBase {
+export class GetRootResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -19,5 +19,5 @@ export class RootGetResponse extends SpeakeasyBase {
      * Successful Response
      */
     @SpeakeasyMetadata()
-    rootGet200ApplicationJSONAny?: any;
+    getRoot200ApplicationJSONAny?: any;
 }

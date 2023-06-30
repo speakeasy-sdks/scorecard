@@ -1,20 +1,19 @@
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Scorecard } from "scorecard";
-import { LogTestcaseLogTestcasePostResponse } from "scorecard/dist/sdk/models/operations";
+import { RunStartResponse } from "scorecard/dist/sdk/models/operations";
 
-const sdk = new Scorecard();
+const sdk = new Scorecard({
+  security: {
+    apiKeyHeader: "",
+  },
+});
 
-sdk.logTestcaseLogTestcasePost({
-  fullPrompt: "corrupti",
-  ideal: "provident",
-  modelResponse: "distinctio",
-  retrievalContext: "quibusdam",
-  testsetId: "unde",
-  userQuery: "nulla",
-}, {
-  apiKeyHeader: "",
-}).then((res: LogTestcaseLogTestcasePostResponse) => {
+sdk.run.start({
+  modelVersion: "corrupti",
+  runId: "provident",
+  token: "distinctio",
+}).then((res: RunStartResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

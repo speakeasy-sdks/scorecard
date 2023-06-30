@@ -6,12 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class LogTestcaseLogTestcasePostSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "security, scheme=true;type=apiKey;subtype=header;name=X-API-Key" })
-    apiKeyHeader: string;
-}
-
-export class LogTestcaseLogTestcasePostResponse extends SpeakeasyBase {
+export class RunStartResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -31,5 +26,5 @@ export class LogTestcaseLogTestcasePostResponse extends SpeakeasyBase {
      * Successful Response
      */
     @SpeakeasyMetadata()
-    logTestcaseLogTestcasePost200ApplicationJSONAny?: any;
+    runStart200ApplicationJSONAny?: any;
 }

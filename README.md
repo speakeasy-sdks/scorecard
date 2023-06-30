@@ -20,20 +20,19 @@ yarn add https://github.com/speakeasy-sdks/scorecard
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Scorecard } from "scorecard";
-import { LogTestcaseLogTestcasePostResponse } from "scorecard/dist/sdk/models/operations";
+import { RunStartResponse } from "scorecard/dist/sdk/models/operations";
 
-const sdk = new Scorecard();
+const sdk = new Scorecard({
+  security: {
+    apiKeyHeader: "",
+  },
+});
 
-sdk.logTestcaseLogTestcasePost({
-  fullPrompt: "corrupti",
-  ideal: "provident",
-  modelResponse: "distinctio",
-  retrievalContext: "quibusdam",
-  testsetId: "unde",
-  userQuery: "nulla",
-}, {
-  apiKeyHeader: "",
-}).then((res: LogTestcaseLogTestcasePostResponse) => {
+sdk.run.start({
+  modelVersion: "corrupti",
+  runId: "provident",
+  token: "distinctio",
+}).then((res: RunStartResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -44,11 +43,18 @@ sdk.logTestcaseLogTestcasePost({
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
-### [Scorecard SDK](docs/sdks/scorecard/README.md)
 
-* [logTestcaseLogTestcasePost](docs/sdks/scorecard/README.md#logtestcaselogtestcasepost) - Log Testcase
-* [rootGet](docs/sdks/scorecard/README.md#rootget) - Root
-* [startRunStartRunPost](docs/sdks/scorecard/README.md#startrunstartrunpost) - Start Run
+### [run](docs/sdks/run/README.md)
+
+* [start](docs/sdks/run/README.md#start) - Start Run
+
+### [testCase](docs/sdks/testcase/README.md)
+
+* [log](docs/sdks/testcase/README.md#log) - Log Testcase
+
+### [root](docs/sdks/root/README.md)
+
+* [get](docs/sdks/root/README.md#get) - Root
 <!-- End SDK Available Operations -->
 
 ### Maturity

@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class StartRunStartRunPostResponse extends SpeakeasyBase {
+export class TestcaseLogResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -26,5 +26,5 @@ export class StartRunStartRunPostResponse extends SpeakeasyBase {
      * Successful Response
      */
     @SpeakeasyMetadata()
-    startRunStartRunPost200ApplicationJSONAny?: any;
+    testcaseLog200ApplicationJSONAny?: any;
 }

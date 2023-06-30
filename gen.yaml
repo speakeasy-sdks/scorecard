@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: d422fd805b23f6a1aed5fc33ceaa85cf
+  docChecksum: 5d4b9e9cc408445498bc7ecf5b133faa
   docVersion: 0.1.0
   speakeasyVersion: 1.51.3
   generationVersion: 2.52.2
@@ -13,7 +13,7 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 typescript:
-  version: 1.0.0
+  version: 1.0.1
   author: scorecard
   maxMethodParams: 0
   packageName: scorecard
