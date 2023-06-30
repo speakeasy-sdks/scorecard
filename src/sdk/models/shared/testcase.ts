@@ -24,7 +24,7 @@ export class Testcase extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "testset_id" })
-    testsetId: string;
+    testsetId: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "user_query" })

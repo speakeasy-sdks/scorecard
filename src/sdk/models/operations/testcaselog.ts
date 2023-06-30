@@ -6,6 +6,11 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
+export class TestcaseLogSecurity extends SpeakeasyBase {
+    @SpeakeasyMetadata({ data: "security, scheme=true;type=apiKey;subtype=header;name=X-API-Key" })
+    apiKeyHeader: string;
+}
+
 export class TestcaseLogResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;

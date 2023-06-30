@@ -9,5 +9,5 @@
 | `ideal`            | *string*           | :heavy_minus_sign: | N/A                |
 | `modelResponse`    | *string*           | :heavy_minus_sign: | N/A                |
 | `retrievalContext` | *string*           | :heavy_minus_sign: | N/A                |
-| `testsetId`        | *string*           | :heavy_check_mark: | N/A                |
+| `testsetId`        | *number*           | :heavy_check_mark: | N/A                |
 | `userQuery`        | *string*           | :heavy_check_mark: | N/A                |

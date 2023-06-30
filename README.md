@@ -6,13 +6,13 @@
 ### NPM
 
 ```bash
-npm add https://github.com/speakeasy-sdks/scorecard
+npm add scorecard
 ```
 
 ### Yarn
 
 ```bash
-yarn add https://github.com/speakeasy-sdks/scorecard
+yarn add scorecard
 ```
 <!-- End SDK Installation -->
 
@@ -20,19 +20,20 @@ yarn add https://github.com/speakeasy-sdks/scorecard
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Scorecard } from "scorecard";
-import { RunStartResponse } from "scorecard/dist/sdk/models/operations";
+import { TestcaseLogResponse } from "scorecard/dist/sdk/models/operations";
 
-const sdk = new Scorecard({
-  security: {
-    apiKeyHeader: "",
-  },
-});
+const sdk = new Scorecard();
 
-sdk.run.start({
-  modelVersion: "corrupti",
-  runId: "provident",
-  token: "distinctio",
-}).then((res: RunStartResponse) => {
+sdk.log({
+  fullPrompt: "corrupti",
+  ideal: "provident",
+  modelResponse: "distinctio",
+  retrievalContext: "quibusdam",
+  testsetId: 602763,
+  userQuery: "nulla",
+}, {
+  apiKeyHeader: "",
+}).then((res: TestcaseLogResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -43,18 +44,9 @@ sdk.run.start({
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
+### [Scorecard SDK](docs/sdks/scorecard/README.md)
 
-### [run](docs/sdks/run/README.md)
-
-* [start](docs/sdks/run/README.md#start) - Start Run
-
-### [testCase](docs/sdks/testcase/README.md)
-
-* [log](docs/sdks/testcase/README.md#log) - Log Testcase
-
-### [root](docs/sdks/root/README.md)
-
-* [get](docs/sdks/root/README.md#get) - Root
+* [log](docs/sdks/scorecard/README.md#log) - Log Testcase
 <!-- End SDK Available Operations -->
 
 ### Maturity
