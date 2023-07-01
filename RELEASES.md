@@ -35,3 +35,11 @@ Based on:
 - Speakeasy CLI 1.51.3 (2.52.2) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [NPM v1.0.4] https://www.npmjs.com/package/@egdeltur/scorecard/v/1.0.4 - .
+
+## 2023-07-01 01:45:01
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.52.0 (2.55.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v1.1.0] https://www.npmjs.com/package/@egdeltur/scorecard/v/1.1.0 - .
