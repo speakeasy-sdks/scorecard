@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 3111a0240a30223979e0728b12ff33a4
   docVersion: 0.1.0
-  speakeasyVersion: 1.53.0
-  generationVersion: 2.58.0
+  speakeasyVersion: 1.53.1
+  generationVersion: 2.58.2
 generation:
   comments:
     disableComments: false
@@ -13,7 +13,7 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 typescript:
-  version: 1.3.0
+  version: 1.3.1
   author: scorecard
   maxMethodParams: 0
   packageName: '@egdeltur/scorecard'
