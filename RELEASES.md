@@ -123,3 +123,11 @@ Based on:
 - Speakeasy CLI 1.64.0 (2.71.0) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [NPM v1.8.0] https://www.npmjs.com/package/@egdeltur/scorecard/v/1.8.0 - .
+
+## 2023-07-26 01:18:32
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.65.0 (2.73.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [NPM v1.9.0] https://www.npmjs.com/package/@egdeltur/scorecard/v/1.9.0 - .
