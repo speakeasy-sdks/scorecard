@@ -3,9 +3,12 @@
 
 ```typescript
 import { Scorecard } from "@egdeltur/scorecard";
-import { TestcaseLogResponse } from "@egdeltur/scorecard/dist/sdk/models/operations";
+import { TestcaseLogResponse, TestcaseLogSecurity } from "@egdeltur/scorecard/dist/sdk/models/operations";
 
 const sdk = new Scorecard();
+const operationSecurity: TestcaseLogSecurity = {
+  apiKeyHeader: "",
+};
 
 sdk.log({
   fullPrompt: "corrupti",
@@ -14,9 +17,7 @@ sdk.log({
   retrievalContext: "quibusdam",
   testsetId: 602763,
   userQuery: "nulla",
-}, {
-  apiKeyHeader: "",
-}).then((res: TestcaseLogResponse) => {
+}, operationSecurity).then((res: TestcaseLogResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

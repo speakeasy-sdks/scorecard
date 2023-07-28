@@ -14,9 +14,12 @@ Log Testcase
 
 ```typescript
 import { Scorecard } from "@egdeltur/scorecard";
-import { TestcaseLogResponse } from "@egdeltur/scorecard/dist/sdk/models/operations";
+import { TestcaseLogResponse, TestcaseLogSecurity } from "@egdeltur/scorecard/dist/sdk/models/operations";
 
 const sdk = new Scorecard();
+const operationSecurity: TestcaseLogSecurity = {
+  apiKeyHeader: "",
+};
 
 sdk.scorecard.log({
   fullPrompt: "corrupti",
@@ -25,9 +28,7 @@ sdk.scorecard.log({
   retrievalContext: "error",
   testsetId: 645894,
   userQuery: "suscipit",
-}, {
-  apiKeyHeader: "",
-}).then((res: TestcaseLogResponse) => {
+}, operationSecurity).then((res: TestcaseLogResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
