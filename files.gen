@@ -32,3 +32,4 @@ docs/models/operations/testcaselogresponse.md
 docs/models/shared/httpvalidationerror.md
 docs/models/shared/validationerror.md
 docs/models/shared/testcase.md
+.gitattributes
