@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ValidationError } from "./validationerror";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Validation Error
- */
 export class HTTPValidationError extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: ValidationError })
     @Expose({ name: "detail" })
