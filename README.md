@@ -18,25 +18,24 @@ yarn add @egdeltur/scorecard
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { Scorecard } from "@egdeltur/scorecard";
-import { TestcaseLogResponse, TestcaseLogSecurity } from "@egdeltur/scorecard/dist/sdk/models/operations";
+import { TestcaseLogResponse } from "@egdeltur/scorecard/dist/sdk/models/operations";
 
-const sdk = new Scorecard();
-const operationSecurity: TestcaseLogSecurity = {
-  apiKeyHeader: "",
-};
+const sdk = new Scorecard({
+  security: {
+    apiKeyHeader: "",
+  },
+});
 
 sdk.log({
   fullPrompt: "corrupti",
-  ideal: "provident",
-  modelResponse: "distinctio",
-  retrievalContext: "quibusdam",
-  testsetId: 602763,
-  userQuery: "nulla",
-}, operationSecurity).then((res: TestcaseLogResponse) => {
+  ideal: "illum",
+  modelResponse: "vel",
+  retrievalContext: "error",
+  testsetId: 645894,
+  userQuery: "suscipit",
+}).then((res: TestcaseLogResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,6 +50,32 @@ sdk.log({
 
 * [log](docs/sdks/scorecard/README.md#log) - Log Testcase
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `next` method that can be called to pull down the next group of results. If the
+return value of `next` is `null`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

@@ -23,13 +23,14 @@ src/sdk/models/operations/index.ts
 src/sdk/models/shared/httpvalidationerror.ts
 src/sdk/models/shared/validationerror.ts
 src/sdk/models/shared/testcase.ts
+src/sdk/models/shared/security.ts
 src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
-docs/sdks/scorecard/README.md
 USAGE.md
-docs/models/operations/testcaselogsecurity.md
 docs/models/operations/testcaselogresponse.md
 docs/models/shared/httpvalidationerror.md
 docs/models/shared/validationerror.md
 docs/models/shared/testcase.md
+docs/models/shared/security.md
+docs/sdks/scorecard/README.md
 .gitattributes

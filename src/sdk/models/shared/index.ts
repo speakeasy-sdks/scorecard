@@ -3,5 +3,6 @@
  */
 
 export * from "./httpvalidationerror";
+export * from "./security";
 export * from "./testcase";
 export * from "./validationerror";
