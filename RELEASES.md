@@ -299,3 +299,13 @@ Based on:
 - [typescript v1.19.0] .
 ### Releases
 - [NPM v1.19.0] https://www.npmjs.com/package/@egdeltur/scorecard/v/1.19.0 - .
+
+## 2023-09-26 01:02:27
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.91.0 (2.129.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v1.20.0] .
+### Releases
+- [NPM v1.20.0] https://www.npmjs.com/package/@egdeltur/scorecard/v/1.20.0 - .
