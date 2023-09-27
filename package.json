@@ -1,6 +1,6 @@
 {
   "name": "@egdeltur/scorecard",
-  "version": "1.20.0",
+  "version": "1.20.1",
   "author": "scorecard",
   "scripts": {
     "prepare": "tsc --build"
