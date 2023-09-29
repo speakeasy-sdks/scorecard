@@ -24,12 +24,12 @@ const sdk = new Scorecard({
 });
 
 sdk.scorecard.log({
-  fullPrompt: "iure",
-  ideal: "magnam",
-  modelResponse: "debitis",
-  retrievalContext: "ipsa",
-  testsetId: 963663,
-  userQuery: "tempora",
+  fullPrompt: "Granite South",
+  ideal: "Books",
+  modelResponse: "Fresh SSL frame",
+  retrievalContext: "Northwest modulo Implementation",
+  testsetId: 100305,
+  userQuery: "Intuitive even",
 }).then((res: TestcaseLogResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -29,12 +29,12 @@ const sdk = new Scorecard({
 });
 
 sdk.log({
-  fullPrompt: "corrupti",
-  ideal: "illum",
-  modelResponse: "vel",
-  retrievalContext: "error",
-  testsetId: 645894,
-  userQuery: "suscipit",
+  fullPrompt: "Granite South",
+  ideal: "Books",
+  modelResponse: "Fresh SSL frame",
+  retrievalContext: "Northwest modulo Implementation",
+  testsetId: 100305,
+  userQuery: "Intuitive even",
 }).then((res: TestcaseLogResponse) => {
   if (res.statusCode == 200) {
     // handle response
