@@ -31,6 +31,7 @@ export type SDKProps = {
      * The security details required to authenticate the SDK
      */
     security?: shared.Security | (() => Promise<shared.Security>);
+
     /**
      * Allows overriding the default axios client used by the SDK
      */
@@ -58,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "0.1.0";
-    sdkVersion = "1.22.2";
-    genVersion = "2.147.0";
-    userAgent = "speakeasy-sdk/typescript 1.22.2 2.147.0 0.1.0 @egdeltur/scorecard";
+    sdkVersion = "1.23.0";
+    genVersion = "2.150.0";
+    userAgent = "speakeasy-sdk/typescript 1.23.0 2.150.0 0.1.0 @egdeltur/scorecard";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
