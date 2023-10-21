@@ -25,7 +25,7 @@ import { Scorecard } from "@egdeltur/scorecard";
 
   const res = await sdk.scorecard.log({
     testsetId: 659738,
-    userQuery: "up",
+    userQuery: "string",
   });
 
   if (res.statusCode == 200) {

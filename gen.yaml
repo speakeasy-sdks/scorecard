@@ -2,26 +2,30 @@ configVersion: 1.0.0
 management:
   docChecksum: 3111a0240a30223979e0728b12ff33a4
   docVersion: 0.1.0
-  speakeasyVersion: 1.96.1
-  generationVersion: 2.150.0
+  speakeasyVersion: 1.104.0
+  generationVersion: 2.169.0
 generation:
   comments:
     disableComments: false
     omitDescriptionIfSummaryPresent: false
   baseServerURL: ""
+  repoURL: https://github.com/speakeasy-sdks/scorecard.git
   sdkClassName: scorecard
   singleTagPerOp: false
   tagNamespacingDisabled: false
 features:
   typescript:
-    core: 2.90.4
+    core: 2.93.0
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     ignores: 2.81.1
     nameOverrides: 2.81.1
 typescript:
-  version: 1.23.0
+  version: 1.24.0
   author: scorecard
   flattenGlobalSecurity: false
+  installationURL: https://github.com/speakeasy-sdks/scorecard
   maxMethodParams: 0
   packageName: '@egdeltur/scorecard'
+  published: true
+  repoSubDirectory: .
