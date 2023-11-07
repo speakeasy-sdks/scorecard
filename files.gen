@@ -19,13 +19,13 @@ src/sdk/types/index.ts
 src/sdk/types/rfcdate.ts
 tsconfig.json
 src/sdk/models/operations/testcaselog.ts
-src/sdk/models/operations/index.ts
 src/sdk/models/shared/httpvalidationerror.ts
 src/sdk/models/shared/validationerror.ts
 src/sdk/models/shared/testcase.ts
 src/sdk/models/shared/security.ts
-src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
+src/sdk/models/operations/index.ts
+src/sdk/models/shared/index.ts
 USAGE.md
 docs/models/operations/testcaselogresponse.md
 docs/models/shared/httpvalidationerror.md

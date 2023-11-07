@@ -23,10 +23,11 @@ import { Scorecard } from "@egdeltur/scorecard";
     },
   });
 
-  const res = await sdk.scorecard.log({
+  const res = await sdk.log({
     testsetId: 659738,
     userQuery: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

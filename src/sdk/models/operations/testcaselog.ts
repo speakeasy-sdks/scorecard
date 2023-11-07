@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class TestcaseLogResponse extends SpeakeasyBase {
@@ -35,5 +35,5 @@ export class TestcaseLogResponse extends SpeakeasyBase {
      * Successful Response
      */
     @SpeakeasyMetadata()
-    testcaseLog200ApplicationJSONAny?: any;
+    any?: any;
 }
