@@ -59,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "0.1.0";
-    sdkVersion = "2.0.1";
-    genVersion = "2.185.0";
-    userAgent = "speakeasy-sdk/typescript 2.0.1 2.185.0 0.1.0 @egdeltur/scorecard";
+    sdkVersion = "2.0.2";
+    genVersion = "2.187.7";
+    userAgent = "speakeasy-sdk/typescript 2.0.2 2.187.7 0.1.0 @egdeltur/scorecard";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -143,7 +143,7 @@ export class Scorecard {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -151,17 +151,17 @@ export class Scorecard {
 
         const res: operations.TestcaseLogResponse = new operations.TestcaseLogResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.any = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -169,14 +169,14 @@ export class Scorecard {
                 }
                 break;
             case httpRes?.status == 422:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.httpValidationError = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.HTTPValidationError
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
