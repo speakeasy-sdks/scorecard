@@ -1,11 +1,11 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```typescript
 import { Scorecard } from "@egdeltur/scorecard";
 
-(async () => {
+async function run() {
     const sdk = new Scorecard({
         security: {
-            apiKeyHeader: "",
+            apiKeyHeader: "<YOUR_API_KEY_HERE>",
         },
     });
 
@@ -17,7 +17,9 @@ import { Scorecard } from "@egdeltur/scorecard";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

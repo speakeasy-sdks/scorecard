@@ -26,11 +26,11 @@ src/sdk/models/shared/security.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/testcaselogresponse.md
 docs/sdk/models/shared/httpvalidationerror.md
 docs/sdk/models/shared/validationerror.md
 docs/sdk/models/shared/testcase.md
 docs/sdk/models/shared/security.md
 docs/sdks/scorecard/README.md
+USAGE.md
 .gitattributes

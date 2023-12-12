@@ -6,5 +6,5 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 
 export class Security extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "security, scheme=true;type=apiKey;subtype=header;name=X-API-Key" })
-    apiKeyHeader: string;
+    apiKeyHeader?: string;
 }

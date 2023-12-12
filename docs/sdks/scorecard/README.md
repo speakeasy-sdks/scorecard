@@ -16,10 +16,10 @@ Log Testcase
 ```typescript
 import { Scorecard } from "@egdeltur/scorecard";
 
-(async() => {
+async function run() {
   const sdk = new Scorecard({
     security: {
-      apiKeyHeader: "",
+      apiKeyHeader: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -31,7 +31,9 @@ import { Scorecard } from "@egdeltur/scorecard";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
