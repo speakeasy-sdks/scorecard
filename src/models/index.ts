@@ -3,6 +3,8 @@
  */
 
 export * from "./httpvalidationerror";
+export * from "./sdkerror";
 export * from "./security";
 export * from "./testcase";
+export * from "./testcaselogop";
 export * from "./validationerror";

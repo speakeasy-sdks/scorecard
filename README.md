@@ -36,9 +36,11 @@ async function run() {
         userQuery: "string",
     });
 
-    if (res.statusCode == 200) {
-        // handle response
+    if (res?.statusCode !== 200) {
+        throw new Error("Unexpected status code: " + res?.statusCode || "-");
     }
+
+    // handle response
 }
 
 run();
@@ -63,11 +65,11 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+All SDK methods return a response object or throw an error. If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4xx-5xx         | */*             |
 
 Example
 
@@ -81,22 +83,20 @@ async function run() {
         },
     });
 
-    let res;
-    try {
-        res = await sdk.log({
+    const res = await sdk
+        .log({
             testsetId: 659738,
             userQuery: "string",
-        });
-    } catch (err) {
-        if (err instanceof errors.SDKError) {
-            console.error(err); // handle exception
+        })
+        .catch((err) => {
             throw err;
-        }
+        });
+
+    if (res?.statusCode !== 200) {
+        throw new Error("Unexpected status code: " + res?.statusCode || "-");
     }
 
-    if (res.statusCode == 200) {
-        // handle response
-    }
+    // handle response
 }
 
 run();
@@ -118,61 +118,12 @@ You can override the default server globally by passing a server index to the `s
 | 0 | `https://api.getscorecard.ai` | None |
 | 1 | `http://localhost:8000` | None |
 
-#### Example
 
-```typescript
-import { Scorecard } from "@egdeltur/scorecard";
-
-async function run() {
-    const sdk = new Scorecard({
-        serverIdx: 1,
-        security: {
-            apiKeyHeader: "<YOUR_API_KEY_HERE>",
-        },
-    });
-
-    const res = await sdk.log({
-        testsetId: 659738,
-        userQuery: "string",
-    });
-
-    if (res.statusCode == 200) {
-        // handle response
-    }
-}
-
-run();
-
-```
 
 
 ### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
-```typescript
-import { Scorecard } from "@egdeltur/scorecard";
-
-async function run() {
-    const sdk = new Scorecard({
-        serverURL: "https://api.getscorecard.ai",
-        security: {
-            apiKeyHeader: "<YOUR_API_KEY_HERE>",
-        },
-    });
-
-    const res = await sdk.log({
-        testsetId: 659738,
-        userQuery: "string",
-    });
-
-    if (res.statusCode == 200) {
-        // handle response
-    }
-}
-
-run();
-
-```
 <!-- End Server Selection [server] -->
 
 
@@ -180,19 +131,49 @@ run();
 <!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+The TypeScript SDK makes API calls using an `HTTPClient` that wraps the native
+[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). This
+client is a thin wrapper around `fetch` and provides the ability to attach hooks
+around the request lifecycle that can be used to modify the request or handle
+errors and response.
 
-For example, you could specify a header for every request that your sdk makes as follows:
+The `HTTPClient` constructor takes an optional `fetcher` argument that can be
+used to integrate a third-party HTTP client or when writing tests to mock out
+the HTTP client and feed in fixtures.
+
+The following example shows how to use the `"beforeRequest"` hook to to add a
+custom header and a timeout to requests and how to use the `"requestError"` hook
+to log errors:
 
 ```typescript
-import { @egdeltur/scorecard } from "Scorecard";
-import axios from "axios";
+import { Scorecard } from "@egdeltur/scorecard";
+import { HTTPClient } from "@egdeltur/scorecard/lib/http";
 
-const httpClient = axios.create({
-    headers: {'x-custom-header': 'someValue'}
-})
+const httpClient = new HTTPClient({
+  // fetcher takes a function that has the same signature as native `fetch`.
+  fetcher: (request) => {
+    return fetch(request);
+  }
+});
 
-const sdk = new Scorecard({defaultClient: httpClient});
+httpClient.addHook("beforeRequest", (request) => {
+  const nextRequest = new Request(request, {
+    signal: request.signal || AbortSignal.timeout(5000);
+  });
+
+  nextRequest.headers.set("x-custom-header", "custom value");
+
+  return nextRequest;
+});
+
+httpClient.addHook("requestError", (error, request) => {
+  console.group("Request Error");
+  console.log("Reason:", `${error}`);
+  console.log("Endpoint:", `${request.method} ${request.url}`);
+  console.groupEnd();
+});
+
+const sdk = new Scorecard({ httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -225,9 +206,11 @@ async function run() {
         userQuery: "string",
     });
 
-    if (res.statusCode == 200) {
-        // handle response
+    if (res?.statusCode !== 200) {
+        throw new Error("Unexpected status code: " + res?.statusCode || "-");
     }
+
+    // handle response
 }
 
 run();
