@@ -27,11 +27,11 @@ typescript:
   imports:
     option: openapi
     paths:
-      callbacks: sdk/models/callbacks
-      errors: sdk/models/errors
-      operations: sdk/models/operations
-      shared: sdk/models/shared
-      webhooks: sdk/models/webhooks
+      callbacks: ""
+      errors: ""
+      operations: ""
+      shared: ""
+      webhooks: ""
   inputModelSuffix: input
   installationURL: https://github.com/speakeasy-sdks/scorecard
   maxMethodParams: 0
@@ -39,4 +39,4 @@ typescript:
   packageName: '@egdeltur/scorecard'
   published: true
   repoSubDirectory: .
-  templateVersion: v1
+  templateVersion: v2
