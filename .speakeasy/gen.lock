@@ -1,0 +1,57 @@
+lockVersion: 2.0.0
+id: a991a5ad-0331-497b-9d4f-28b2ceb0002e
+management:
+  docChecksum: 3111a0240a30223979e0728b12ff33a4
+  docVersion: 0.1.0
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 2.2.0
+  configChecksum: b3868943648ea3686ee1440ebcf2c8c0
+  repoURL: https://github.com/speakeasy-sdks/scorecard.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/scorecard
+  published: true
+features:
+  typescript:
+    core: 3.4.1
+    globalSecurity: 2.82.2
+    globalServerURLs: 2.82.1
+    ignores: 2.81.1
+    nameOverrides: 2.81.1
+generatedFiles:
+  - src/sdk/sdk.ts
+  - .eslintrc.js
+  - .npmignore
+  - package-lock.json
+  - package.json
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/encodings.ts
+  - src/lib/http.ts
+  - src/lib/retries.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/sdk/index.ts
+  - src/models/sdkerror.ts
+  - src/types/blobs.ts
+  - src/types/decimal.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - tsconfig.json
+  - src/models/testcaselogop.ts
+  - src/models/httpvalidationerror.ts
+  - src/models/validationerror.ts
+  - src/models/testcase.ts
+  - src/models/security.ts
+  - src/models/index.ts
+  - docs/models/testcaselogresponse.md
+  - docs/models/httpvalidationerror.md
+  - docs/models/validationerror.md
+  - docs/models/testcase.md
+  - docs/models/security.md
+  - docs/sdks/scorecard/README.md
+  - USAGE.md
+  - .gitattributes
