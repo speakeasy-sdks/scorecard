@@ -1,7 +1,7 @@
 {
   "type": "commonjs",
   "name": "@egdeltur/scorecard",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "author": "scorecard",
   "main": "./index.js",
   "sideEffects": false,

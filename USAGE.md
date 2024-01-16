@@ -9,16 +9,13 @@ async function run() {
         },
     });
 
-    const res = await sdk.log({
+    const result = await sdk.log({
         testsetId: 659738,
         userQuery: "string",
     });
 
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
-    }
-
-    // handle response
+    // Handle the result
+    console.log(result);
 }
 
 run();

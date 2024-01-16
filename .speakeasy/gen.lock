@@ -4,24 +4,26 @@ management:
   docChecksum: 3111a0240a30223979e0728b12ff33a4
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.230.3
-  releaseVersion: 2.2.2
-  configChecksum: 252caadf1e57e52db86a16ca217f2f1d
+  generationVersion: 2.233.2
+  releaseVersion: 2.3.0
+  configChecksum: d06a69cd980ff70c7b0fcd6a2f895394
   repoURL: https://github.com/speakeasy-sdks/scorecard.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/scorecard
   published: true
 features:
   typescript:
-    core: 3.4.5
+    core: 3.4.6
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
     ignores: 2.81.1
     nameOverrides: 2.81.1
+    unions: 2.85.0
 generatedFiles:
   - src/sdk/sdk.ts
   - .eslintrc.js
   - .npmignore
+  - RUNTIMES.md
   - package-lock.json
   - package.json
   - src/index.ts
@@ -49,6 +51,7 @@ generatedFiles:
   - src/models/index.ts
   - docs/models/testcaselogresponse.md
   - docs/models/httpvalidationerror.md
+  - docs/models/loc.md
   - docs/models/validationerror.md
   - docs/models/testcase.md
   - docs/models/security.md

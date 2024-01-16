@@ -31,16 +31,13 @@ async function run() {
         },
     });
 
-    const res = await sdk.log({
+    const result = await sdk.log({
         testsetId: 659738,
         userQuery: "string",
     });
 
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
-    }
-
-    // handle response
+    // Handle the result
+    console.log(result);
 }
 
 run();
@@ -83,20 +80,19 @@ async function run() {
         },
     });
 
-    const res = await sdk
-        .log({
+    let result;
+    try {
+        result = await sdk.log({
             testsetId: 659738,
             userQuery: "string",
-        })
-        .catch((err) => {
-            throw err;
         });
-
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
+    } catch (err) {
+        // Handle errors here
+        throw err;
     }
 
-    // handle response
+    // Handle the result
+    console.log(result);
 }
 
 run();
@@ -111,19 +107,65 @@ run();
 
 ### Select Server by Index
 
-You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+You can override the default server globally by passing a server index to the `serverIdx` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
 | # | Server | Variables |
 | - | ------ | --------- |
 | 0 | `https://api.getscorecard.ai` | None |
 | 1 | `http://localhost:8000` | None |
 
+```typescript
+import { Scorecard } from "@egdeltur/scorecard";
 
+async function run() {
+    const sdk = new Scorecard({
+        serverIdx: 1,
+        security: {
+            apiKeyHeader: "<YOUR_API_KEY_HERE>",
+        },
+    });
+
+    const result = await sdk.log({
+        testsetId: 659738,
+        userQuery: "string",
+    });
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
 
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
+The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
+
+```typescript
+import { Scorecard } from "@egdeltur/scorecard";
+
+async function run() {
+    const sdk = new Scorecard({
+        serverURL: "https://api.getscorecard.ai",
+        security: {
+            apiKeyHeader: "<YOUR_API_KEY_HERE>",
+        },
+    });
+
+    const result = await sdk.log({
+        testsetId: 659738,
+        userQuery: "string",
+    });
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
 <!-- End Server Selection [server] -->
 
 
@@ -201,22 +243,25 @@ async function run() {
         },
     });
 
-    const res = await sdk.log({
+    const result = await sdk.log({
         testsetId: 659738,
         userQuery: "string",
     });
 
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
-    }
-
-    // handle response
+    // Handle the result
+    console.log(result);
 }
 
 run();
 
 ```
 <!-- End Authentication [security] -->
+
+<!-- Start Requirements [requirements] -->
+## Requirements
+
+For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
+<!-- End Requirements [requirements] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
