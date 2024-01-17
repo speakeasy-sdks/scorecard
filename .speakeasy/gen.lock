@@ -4,7 +4,7 @@ management:
   docChecksum: 3111a0240a30223979e0728b12ff33a4
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.233.2
+  generationVersion: 2.234.3
   releaseVersion: 2.3.0
   configChecksum: d06a69cd980ff70c7b0fcd6a2f895394
   repoURL: https://github.com/speakeasy-sdks/scorecard.git
@@ -30,6 +30,7 @@ generatedFiles:
   - src/lib/base64.ts
   - src/lib/config.ts
   - src/lib/encodings.ts
+  - src/lib/event-streams.ts
   - src/lib/http.ts
   - src/lib/retries.ts
   - src/lib/sdks.ts

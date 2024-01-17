@@ -60,6 +60,6 @@ export const SDK_METADATA = Object.freeze({
     language: "typescript",
     openapiDocVersion: "0.1.0",
     sdkVersion: "2.3.0",
-    genVersion: "2.233.2",
-    userAgent: "speakeasy-sdk/typescript 2.3.0 2.233.2 0.1.0 @egdeltur/scorecard",
+    genVersion: "2.234.3",
+    userAgent: "speakeasy-sdk/typescript 2.3.0 2.234.3 0.1.0 @egdeltur/scorecard",
 });
