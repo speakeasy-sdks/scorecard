@@ -5,8 +5,10 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 2.3.0
+  version: 2.3.1
   author: scorecard
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false
