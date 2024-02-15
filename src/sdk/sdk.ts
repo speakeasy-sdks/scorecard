@@ -20,6 +20,7 @@ export class Scorecard extends ClientSDK {
         this.options$ = options;
         void this.options$;
     }
+
     /**
      * Log Testcase
      */

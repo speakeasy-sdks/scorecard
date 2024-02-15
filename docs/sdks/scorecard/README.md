@@ -25,7 +25,7 @@ async function run() {
 
   const result = await sdk.log({
     testsetId: 659738,
-    userQuery: "string",
+    userQuery: "<value>",
   });
 
   // Handle the result
