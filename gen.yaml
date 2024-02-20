@@ -8,7 +8,11 @@ generation:
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 2.3.2
+  version: 2.4.0
+  additionalDependencies:
+    dependencies: {}
+    devDependencies: {}
+    peerDependencies: {}
   author: scorecard
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false
