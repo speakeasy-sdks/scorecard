@@ -6,6 +6,7 @@ import { SDKHooks } from "../hooks";
 import { SDK_METADATA, SDKOptions, serverURLFromOptions } from "../lib/config";
 import * as enc$ from "../lib/encodings";
 import { HTTPClient } from "../lib/http";
+import * as schemas$ from "../lib/schemas";
 import { ClientSDK, RequestOptions } from "../lib/sdks";
 import * as models from "../models";
 
@@ -48,7 +49,11 @@ export class Scorecard extends ClientSDK {
         headers$.set("Content-Type", "application/json");
         headers$.set("Accept", "application/json");
 
-        const payload$ = models.Testcase$.outboundSchema.parse(input);
+        const payload$ = schemas$.parse(
+            input,
+            (value$) => models.Testcase$.outboundSchema.parse(value$),
+            "Input validation failed"
+        );
         const body$ = enc$.encodeJSON("body", payload$, { explode: true });
 
         const path$ = this.templateURLComponent("/log_testcase")();
@@ -63,9 +68,8 @@ export class Scorecard extends ClientSDK {
 
         const context = { operationID: "testcase_log" };
         const doOptions = { context, errorCodes: [] };
-        const request = await this.createRequest$(
+        const request = this.createRequest$(
             {
-                context,
                 security: securitySettings$,
                 method: "POST",
                 path: path$,
@@ -86,17 +90,29 @@ export class Scorecard extends ClientSDK {
 
         if (this.matchResponse(response, 200, "application/json")) {
             const responseBody = await response.json();
-            const result = models.TestcaseLogResponse$.inboundSchema.parse({
-                ...responseFields$,
-                any: responseBody,
-            });
+            const result = schemas$.parse(
+                responseBody,
+                (val$) => {
+                    return models.TestcaseLogResponse$.inboundSchema.parse({
+                        ...responseFields$,
+                        any: val$,
+                    });
+                },
+                "Response validation failed"
+            );
             return result;
         } else if (this.matchResponse(response, 422, "application/json")) {
             const responseBody = await response.json();
-            const result = models.TestcaseLogResponse$.inboundSchema.parse({
-                ...responseFields$,
-                HTTPValidationError: responseBody,
-            });
+            const result = schemas$.parse(
+                responseBody,
+                (val$) => {
+                    return models.TestcaseLogResponse$.inboundSchema.parse({
+                        ...responseFields$,
+                        HTTPValidationError: val$,
+                    });
+                },
+                "Response validation failed"
+            );
             return result;
         } else {
             const responseBody = await response.text();

@@ -4,6 +4,7 @@
 
 export * from "./httpvalidationerror";
 export * from "./sdkerror";
+export * from "./sdkvalidationerror";
 export * from "./security";
 export * from "./testcase";
 export * from "./testcaselogop";
