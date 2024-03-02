@@ -64,9 +64,14 @@ export class Scorecard extends ClientSDK {
             typeof this.options$.security === "function"
                 ? await this.options$.security()
                 : this.options$.security;
+
+        const context = {
+            operationID: "testcase_log",
+            oAuth2Scopes: [],
+            securitySource: this.options$.security,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "testcase_log" };
         const doOptions = { context, errorCodes: [] };
         const request = this.createRequest$(
             {
