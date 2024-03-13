@@ -3,7 +3,7 @@
  */
 
 import { HTTPValidationError, HTTPValidationError$ } from "./httpvalidationerror";
-import { z } from "zod";
+import * as z from "zod";
 
 export type TestcaseLogResponse = {
     /**

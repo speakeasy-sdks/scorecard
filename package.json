@@ -1,6 +1,6 @@
 {
   "name": "@egdeltur/scorecard",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "author": "scorecard",
   "main": "./index.js",
   "sideEffects": false,
@@ -29,7 +29,6 @@
     "zod": "^3.22.4"
   },
   "dependencies": {
-    "decimal.js": "^10.4.3",
-    "jsonpath": "^1.1.1"
+    
   }
 }
