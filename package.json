@@ -1,6 +1,6 @@
 {
   "name": "@egdeltur/scorecard",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "author": "scorecard",
   "main": "./index.js",
   "sideEffects": false,
